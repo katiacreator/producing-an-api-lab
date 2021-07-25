@@ -1,13 +1,14 @@
+import("dotenv/config.js")
 import createError from 'http-errors'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-
 import { router as indexRouter } from './routes/index.js'
 import { router as apiRouter } from './routes/api.js'
 
+import ('./config/database.js')
 const app = express()
 
 // view engine setup
@@ -47,3 +48,4 @@ app.use(function (err, req, res, next) {
 })
 
 export { app }
+

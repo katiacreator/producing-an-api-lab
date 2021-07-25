@@ -6,9 +6,12 @@ export {
 }
 
 const hurstonSchema = new Schema({
-  title: {type: String, required: true},
-  type: {type: String, default: "Book"},
-  published: {type: Date}
+  title: {
+    type: String, 
+    required: true
+  },
+  type: String,
+  yearPublished: Number
 })
 
 const Hurston = mongoose.model("Hurston", hurstonSchema)
